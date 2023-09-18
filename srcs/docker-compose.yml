@@ -3,9 +3,10 @@ version: '3.5'
 services:
   nginx:
     container_name: nginx
+    image: nginx
     build: ./requirements/nginx
-    expose:
-      - "443"
+    ports:
+      - "443:443"
     volumes:
       - wordpress_data:/var/www/html
     restart: always
@@ -13,9 +14,10 @@ services:
       - network
     depends_on:
       - wordpress
-  
+
   mariadb:
     container_name: mariadb
+    image: mariadb
     build: ./requirements/mariadb
     expose:
       - "3306"
@@ -29,6 +31,7 @@ services:
   
   wordpress:
     container_name: wordpress
+    image: wordpress
     build: 
       context: ./requirements/wordpress
       dockerfile: Dockerfile

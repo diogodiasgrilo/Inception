@@ -1,5 +1,5 @@
-WORDPRESS_FILE = $(HOME)/data/wordpress
-MYSQL_FILE = $(HOME)/data/mysql
+WORDPRESS_FILE = /home/diogpere/data/wordpress
+MYSQL_FILE = /home/diogpere/data/mysql
 
 all: $(WORDPRESS_FILE) $(MYSQL_FILE)
 	@$(MAKE) up
