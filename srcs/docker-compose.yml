@@ -24,6 +24,12 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     restart: always
+    healthcheck:
+      interval: 5s
+      timeout: 30s
+      retries: 10
+      start_period: 5s
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
     networks:
       - network
     env_file:
@@ -45,7 +51,8 @@ services:
     env_file:
       - .env
     depends_on:
-      - mariadb
+      mariadb:
+        condition: service_healthy
 
 
 volumes:
