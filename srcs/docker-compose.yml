@@ -25,10 +25,10 @@ services:
       - mariadb_data:/var/lib/mysql
     restart: always
     healthcheck:
-      interval: 5s
-      timeout: 30s
+      interval: 7s
+      timeout: 35s
       retries: 10
-      start_period: 5s
+      start_period: 7s
       test: ["CMD", "mysqladmin", "ping", "--silent"]
     networks:
       - network
