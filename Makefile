@@ -38,7 +38,7 @@ deep_clean:
 	docker images -q | xargs -r docker rmi -f;\
 	docker volume ls -q | xargs -r docker volume rm;\
 	docker network ls --format '{{.Name}}' | grep -vE "bridge|host|none" | xargs -r docker network rm;
-	rm -rf /home/diogpere/data;
+	@rm -rf /home/diogpere/data;
 
 .PHONY: all up down re deep_clean logs ps volumes build restart deep_clean
 
