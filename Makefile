@@ -40,7 +40,7 @@ deep_clean:
 	docker network ls --format '{{.Name}}' | grep -vE "bridge|host|none" | xargs -r docker network rm;
 	@rm -rf /home/diogpere/data;
 
-.PHONY: all up down re deep_clean logs ps volumes build restart deep_clean
+.PHONY: all up down re deep_clean ps volumes build restart deep_clean
 
 #COLORS
 GREEN = \033[1;32m
