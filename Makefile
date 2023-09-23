@@ -43,6 +43,6 @@ deep_clean:
 .PHONY: all up down re deep_clean ps volumes build restart deep_clean
 
 #COLORS
-GREEN =\033[1;32m
+GREEN = \033[1;32m
 RED = \033[1;31m
 DEFAULT = \033[0m
