@@ -44,5 +44,5 @@ deep_clean:
 
 #COLORS
 GREEN = \033[1;32m
-RED =\033[1;31m
+RED = \033[1;31m
 DEFAULT = \033[0m
